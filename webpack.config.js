@@ -1,6 +1,7 @@
 const path = require('path');
-
+/* eslint-disable */
 module.exports = () => {
+  /* eslint-enable */
   return {
     context: __dirname,
     entry: './js/ClientApp.jsx',
