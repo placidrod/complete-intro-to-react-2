@@ -8,6 +8,9 @@ module.exports = () => ({
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
   },
+  devServer: {
+    publicPath: '/public/'
+  },
   // file resolution priority by extension:
   resolve: {
     extensions: ['.js', '.jsx', '.json']
