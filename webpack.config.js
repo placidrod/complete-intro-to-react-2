@@ -9,7 +9,8 @@ module.exports = () => ({
     filename: 'bundle.js'
   },
   devServer: {
-    publicPath: '/public/'
+    publicPath: '/public/',
+    historyApiFallback: true
   },
   // file resolution priority by extension:
   resolve: {
