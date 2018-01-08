@@ -3,16 +3,8 @@ import preload from '../data.json';
 import ShowCard from './ShowCard';
 
 class Search extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     searchTerm: 'my debug statement'
-  //   };
-  //   this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
-  // }
-
   state = {
-    searchTerm: 'my debug statement'
+    searchTerm: ''
   };
 
   handleSearchTermChange = event => {
@@ -34,7 +26,11 @@ class Search extends Component {
           />
         </header>
         <div>
-          {preload.shows.map(show => <ShowCard key={show.imdbID} {...show} />)}
+          {preload.shows
+            .filter(show =>
+              `${show.title} ${show.description}`.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+            )
+            .map(show => <ShowCard key={show.imdbID} {...show} />)}
         </div>
       </div>
     );
